@@ -182,7 +182,20 @@
  
         <footer>
             <hr>
-            &copy; <?php echo date("Y"); ?> wxalert
+            <p>&copy; <span id="timestamp"></span>&nbsp;WxAlert</p>
+                <script>
+                    document.onreadystatechange = () => {
+                        if (document.readyState === 'complete') {
+                            writeYear()
+                         }
+                    };
+
+                    function writeYear() {
+                      var date = new Date();
+                      var year = date.getFullYear();
+                      document.getElementById("timestamp").innerHTML = year;
+                    }
+                </script>
         </footer>
     </body>
 </html>    

@@ -61,22 +61,22 @@
                     </p>
                     <table style="width:100%">
                         <caption>Alert Icon Categories</caption>
-                    <tr>
-                        <th class="row-icon">Icon</th>
-                        <th class="row-desc">Description</th>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/alert/alert_caution64.png" alt="caution icon"></td>
-                        <td>Alert advisory</td>
-                    </tr>
-                    <tr>
-                        <td><img src="./images/alert/alert_watch64.png" alt="watch icon"></td>
-                        <td>Alert watch.</td>
-                    </tr> 
-                    <tr>
-                        <td><img src="./images/alert/alert_warning64.png" alt="watch icon"></td>
-                        <td>Alert warning.</td>
-                    </tr>                      
+                        <tr>
+                            <th class="row-icon">Icon</th>
+                            <th class="row-desc">Description</th>
+                        </tr>
+                        <tr>
+                            <td><img src="./images/alert/alert_caution64.png" alt="caution icon"></td>
+                            <td>Alert advisory</td>
+                        </tr>
+                        <tr>
+                            <td><img src="./images/alert/alert_watch64.png" alt="watch icon"></td>
+                            <td>Alert watch.</td>
+                        </tr> 
+                        <tr>
+                            <td><img src="./images/alert/alert_warning64.png" alt="watch icon"></td>
+                            <td>Alert warning.</td>
+                        </tr>                      
                     </table>
                 </section>
                 <section>
@@ -125,7 +125,7 @@
                             <td><img src="./images/alert/watch_high_wind.png" alt="high wind"></td>
                             <td>High wind.</td>
                         </tr>                      
-                        </table>
+                    </table>
                 </section>
                 <section>
                     <h2>Warning Icons</h2>
@@ -147,14 +147,26 @@
                             <td><img src="./images/alert/warn_red_flag.png" alt="red flag warning"></td>
                             <td>Red flag.</td>
                         </tr>                      
-                        </table>
+                    </table>
                 </section>
             </article>
         </main>
- 
         <footer>
             <hr>
-           <p> &copy; wxalert</p>
+            <p>&copy; <span id="timestamp"></span>&nbsp;WxAlert</p>
+                <script>
+                    document.onreadystatechange = () => {
+                        if (document.readyState === 'complete') {
+                            writeYear()
+                         }
+                    };
+
+                    function writeYear() {
+                      var date = new Date();
+                      var year = date.getFullYear();
+                      document.getElementById("timestamp").innerHTML = year;
+                    }
+                </script>
         </footer>
     </body>
 </html>    

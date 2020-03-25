@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./styles/card.css">
         <link rel="stylesheet" href="./styles/nav.css">
         <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./css/style.css">
 
         <!--Favicon-->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -49,114 +50,197 @@
         </header>
 
         <main class="main">
-            <div class="body-content">
-                <h1>App Overview</h1>  
-                <p>WxAlert is a mobile application that provides current weather information for more than 20,000 cities across the continental United States. 
-                   It presents the weather forecasts using various standard weather icons. When posted, various weather alert icons are also displayed.
-                </p>
-            </div>
-            <div class="body-content">
-                <h2>Weather Updates</h2>
-                <p>Weather updates are generally fetched twice each day. Alert updates can be set to update at intervals from 1 to 12 hours.
-                </p>
-            </div>
-
-            <section class="cards">
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_portrait.jpg" alt="portrait">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast presented in portrait view. Flood and air quality advisories are posted.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_landscape.jpg" alt="landscape">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast presented in landscape view. Flood, severe thunderstorm and special weather advisories are posted.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_alert.jpg" alt="alert">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast with flood advisory detail icon shown. Two advisories have been posted.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_alert_detail.jpg" alt="alert detail">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Alert Detail View</h2>
-                        <p>Details of a Coastal Flood Advisory as issued by National Weather Service (NWS) Miami, FL.</p>
-                    </div>
-                </article>
-            </section>
-            <div class="body-content">
-                <h1>Disclaimer</h1> 
-                <blockquote>
-                    <p>WxAlert should <strong>not</strong> be used as a primary source for emergency weather information that is to be received 
-                        in a timely manner. For timely information related to tornado, flash flooding, hurricane, avalanche, etc. depend
-                        on other well established sources of timely weather notifications as provided by the National Weather Service.
+            <article>
+                <section>
+                    <h1>User Guide</h1>
+                    <p>WxAlert (hereby known as the app) is a mobile application that provides current, forecast and alert weather 
+                        information for more than 20,000 cities across the United States and its territories. Current, forecast 
+                        and alert information are displayed using various weather and alert icons. A description of each weather icon is 
+                        available at <a href="https://support.wxalert.us/weather.html">weather icons</a>. General description of alert
+                        icons is available at <a href="https://support.wxalert.us/alert.html">alert icons</a> and 
+                        <a href="https://support.wxalert.us/caution.html">caution icons.</a>
                     </p>
-                </blockquote> 
-            </div>
-            <div class="body-content">
-                <h1>Gallery</h1>
-                <p>Included are several screenshots taken from the application. These screenshots depict various weather events through
-                   several seasons of the year, for several cities across the continental United States.
-                </p>
-            </div>
-            <section class="cards">
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_beachhaz.jpg" alt="screen_beachhaz">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast with beach hazard advisory.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_beachhaz_detail.jpg" alt="screen_beachhaz_detail">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast presented with beach hazard detail icon.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_callout.jpg" alt="screen_callout">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather Callout</h2>
-                        <p>One day weather forecast.</p>
-                    </div>
-                </article>
-                <article class="card" style="width: 22.5em;">
-                    <picture class="card-screenshot">
-                        <img src="./images/screenshot/360/screen_flood.jpg" alt="screen_flood">
-                    </picture>
-                    <div class="card-content">
-                        <h2>Weather View</h2>
-                        <p>Weather forecast with flood warning posted.</p>
-                    </div>
-                </article>
-            </section>
+                    <h2>Forecast Update</h2>
+                    <p>
+                        Weather forecast data is only fetched at the data timestamp expiration time. Since forecast data is generally updated every
+                        twelve (12) hours, the app generally fetches forecast data twice daily. Current weather data, such as temperature, 
+                        is generally valid for two (2) hours. So current weather data update is performed every two (2) hours. Typical app forecast update 
+                        times are 6:30 am and 6:30 pm local time each day.
+                    </p>
+                    <blockquote>
+                        <p>
+                            Cellular or WiFi Network is required to fetch and update weather data.
+                        </p>
+                    </blockquote>
+                    <h2>Battery Life</h2>
+                    <p>
+                        Fetching data only when necessary has the advantage of extending device battery life. Offline data storage in a local database 
+                        reduces the need to fetch data from the network each time the app comes to the foreground. This also extends battery life.
+                        No updates are performed while the app is in the background.
+                    </p>
+                    <blockquote>
+                        <p>Manual options are provided for updating current weather data before the two hours expires.</p>
+                    </blockquote>
+                </section>
+                <section>
+                    <h2>User Interface</h2>
+                    <p>
+                        Four tab icons are shown in the app. At first launch the search tab is the only one (1) that is active.
+                        When the first city search is performed, all other tabs become active.
+                        <ul>
+                            <li>City Search</li>
+                            <li>Weather Forecast</li>
+                            <li>App Settings</li>
+                            <li>App Information</li>
+                        </ul>
+                    </p>
+                    <img  class="center"src="images/WxToolBarWeb.png" alt="Toolbar">
+                    <figcaption >Figure 1 - App Toolbar</figcaption>               
+                </section>
+                <section>
+                    <h2>City Search View</h2>
+                    <p>
+                        Current, forecast and alert weather information begins with a city location. Users can chose to 
+                        <span style="color: darkblue;">"Allow WxAlert to access your location while using the app"</span> 
+                        or manually enter a search location. The first three characters of a city name will generate a list 
+                        of city and state matches from a local database. Current local weather conditions are displayed when a
+                        city location is selected.
+                    </p>
+    
+                        <img  class="center"src="images/WxSearchWeb.png" alt="SearchView">
+                        <figcaption >Figure 2 - City Search View</figcaption>
+     
+                    <h3>Location Privacy</h3>
+                    <p>
+                        Sharing of location information is limited to fetching weather data for your current location 
+                        or other city searches that are performed. No location information is shared with third party entities 
+                        for marketing or advertisement (ads) generation. No ads or marketing schemes are displayed or 
+                        generated by this app. For more information see <a href="https://support.wxalert.us/legal.html">Privacy Policy</a>
+                    </p>
+                </section>
+                <section>
+                    <h2>Current Weather View</h2>
+                    <p>
+                        Weather elements displayed are sky condition, temperature (degrees Fahrenheit), wind direction,
+                        relative humidity, wind speed, wind gust and visibility. 
+                    </p>
+                    <img class="center" src="images/WxMapCalloutWeb.png" alt="MapCalloutView"> 
+                    <figcaption>Figure 3 - Current Weather View</figcaption>
+                    <blockquote>
+                        <p>
+                            Only weather data for the last search city is displayed in the Current Weather View. 
+                            To see current weather data for a previous city, search again in the City Search View.
+                        </p>
+                    </blockquote>
+    
+                    <h2>Update Frequency</h2>
+                    <p>
+                        Updated temperature information is generally only available every two (2) hours. As a result, 
+                        current weather information is only automatically updated every two (2) hours. This means if the app
+                        is placed in the background for more than two hours, on return to the foreground it will send a 
+                        request to the weather server to obtain an update. A stale temperature value will appear enclosed in a 
+                        red circle.
+                    </p>
+
+                    <h2>American Standard</h2>
+                    <blockquote>
+                        <p>
+                            The app uses American Standard units of measure only. There is no option to change to metric values
+                            at this time.
+                        </p>
+                    </blockquote>
+                        <ul>
+                            <li>Temperature: Fahrenheit &#176;F</li>
+                            <li>Wind speed: Miles Per Hour (mph)</li>
+                            <li>Wind gust: Miles Per Hour (mph)</li>
+                            <li>Visibility: Miles</li>
+                        </ul>
+                </section>
+                <section>
+                    <h2>Forecast View</h2>
+                    <p>
+                        Forecast View consist of several data sections integrated into one display view.
+                        <ul>
+                            <li>Scrollable Alert List</li>
+                            <li>Search City Name</li>
+                            <li>Scrollable Forecast list</li>
+                            <li>Detailed Alert Icon</li>
+                            <li>Current Temperature</li>
+                        </ul>
+                    </p>
+                    <img class="center" src="images/WxWeather.png" alt="WeatherView">
+                    <figcaption>Figure 4 - Forecast View</figcaption> 
+    
+                    <h3>Scrollable Alert List</h3>
+                    <p>
+                        Scrollable alert list consists of icons representing all currently posted weather alerts.
+                    </p>
+                    <h3>Search City Name</h3>
+                    <p>
+                        The search city name is presented as the full city name and two character state identifier. 
+                        This is also the name displayed when a different city is selected in the app settings.
+                    </p>
+                    <h3>Scrollable Forecast</h3>
+                    <p>
+                        Weather Forecast information is generally updated two (2) times each day. Once in the morning and once
+                        in the evening. Typical update times are 6:30 am and 6:30 pm local time. Forecast includes sky condition,
+                        wind direction and wind speed. Also included are expected high and low temperatures.
+                    </p>
+                </section>
+                <section>
+                    <h3>Detailed Alert Icon</h3>
+                    <p>
+                        Embedded in the Scrollable Forecast is a Detailed Alert Icon. This icon is displayed when one or more
+                        weather alert is posted. The Detailed Alert Icon is always the latest alert in the list. Tapping the alert detail 
+                        presents an alert detail page. Swiping on the presented page shows additional details if more that one icon appears in the 
+                        Alert List. The Alert List is shown at the top of the Forecast View.
+                    </p>
+                    <img class="center" src="images/WxDiamondTouch.png" alt="Detailed Icon">
+                    <figcaption>Figure 5 - Alert Detail</figcaption> 
+                </section>
+                <section>
+                    <h3>Current Temperature</h3>
+                    <p>
+                        The current temperature, that is displayed in the Current Weather View, is also displayed in the Forecast
+                        View. It is displayed in two (2) formats. Expired, shown encircled in red, and current, shown encircled
+                        in green.
+                    </p>
+                    <img class="center" src="images/WxTempRed.png" alt="Temperature red">
+                    <figcaption>Figure 6 - Expired Temperature</figcaption> 
+    
+                    <img class="center" src="images/WxTempGreen.png" alt="Temperature red">
+                    <figcaption>Figure 7 - Current Temperature</figcaption> 
+                </section>
+                <section>
+                    <h3>Erroneous Reading</h3>
+                    <p>
+                        Occasionally, a weather station will not be in service. When this occurs a temperature reading of -99 is presented. 
+                        The solution to this issue is to select an active weather station from the list of stations shown in the Station View. 
+                        The Station View can be selected from the App Settings Tab. 
+                        See <a href="https://support.wxalert.us/ui.html">troubleshooting.</a>
+                    </p>
+                    <img class="center" src="images/WxTempErrorWeb.png" alt="Temperature red">
+                    <figcaption>Figure 8 - Erroneous Temperature</figcaption> 
+                </section>
+            </article>
         </main>
  
         <footer>
             <hr>
-            <p>&copy; wxalert</p>
+            <p>&copy; <span id="timestamp"></span>&nbsp;WxAlert</p>
+                <script>
+                    document.onreadystatechange = () => {
+                        if (document.readyState === 'complete') {
+                            writeYear()
+                         }
+                    };
+
+                    function writeYear() {
+                      var date = new Date();
+                      var year = date.getFullYear();
+                      document.getElementById("timestamp").innerHTML = year;
+                    }
+                </script>
         </footer>
     </body>
 </html>    
